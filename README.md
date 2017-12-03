@@ -2,14 +2,14 @@
 
 
 ### Introduction
-HyperSecure is an iOS Framework of HyperVerge's Deep Learning powered Face Recognition System. This documentation explains how to use the framework to build your own app with Face Recognition.
+HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity and Access Management (IAM) System. This documentation explains how to use the framework to build your own app.
 <br></br>
 
 ![](https://media.giphy.com/media/P7hZDbHqQAKxG/giphy.gif)
 <br>
 
 #### Overview
-In the context of HyperVerge's face recognition system, there are 3 entities: User, Group and Organization. Users are the people enrolled for Face Recognition having registered with their face image. A Group can represent a team or site or location or building or any other collection of people. An Organization can thus have multiple Groups and each Group can have multiple Users.
+In the context of HyperVerge's face recognition based IAM system, there are 3 entities: User, Group and Organization. Users are the people enrolled for Face Recognition having registered with their face image. A Group can represent a team or site or location or building or any other collection of people. An Organization can thus have multiple Groups and each Group can have multiple Users.
 
 A high-level overview of the Face Recognition workflow is as follows:
 
@@ -311,20 +311,20 @@ hvfrcamera.clearCapturedImages()
     
     | End Point | Request  | Result |
     |-----------|----------------|--------|
-    |/user/edit|{<br/> "userId" : string,<br/> "details" : string<br/>}|{<br/>}|
-    |/user/get|{<br/> "userId" : string <br/>}|{<br/> "userId" : string,<br/> "roles" : Array(roles),<br/> "createdDate" : int, <br/> "details"     : string, <br/>"groups" : Array({<br/>"groupId" : string,<br/>"role" : string<br/>}),<br/>"faces" : Array(faceId)<br/>}|
-    |/user/remove|{<br/> "userId" : string<br/>}|{<br/>}|
-    |/user/removeFace|{<br/> "userId" : string,<br/> "faceId" : string<br/> }|{<br/>}|
-    |/user/fetchFaces|{<br/> "userId" : string <br/>}|{<br/> "faces": Array(string) <br/>}|
-    |/user/fetchFaceUrls|{<br/> "userId" : string <br/>}|{<br/> "faceUrls": Array(string) <br/>}|
-    |/group/create|{<br/> "groupname" : string,<br/> "sizeLimit" : number <br/>}|{<br/> "groupId" : string <br/>}|
-    |/group/get|{<br/> "groupId" : string <br/>}|{<br/>"groupname" : string,<br/> "sizeLimit" : string,<br/> "createdDate" : int <br/>}|
-    |/group/edit|{<br/> "groupId" : string,<br/> "params" : {<br/> "groupname" : string,<br/> "sizeLimit" : number <br/>} <br/>}|{<br/>}|
-    |/group/remove|{<br/> "groupId" : string <br/>}|{<br/>}|
-    |/group/addUser|{<br/> "groupId" : string,<br/> "userId" : string <br/>}|{<br/>}|
-    |/group/removeUser|{<br/> "groupId" : string,<br/> "userId" : string <br/>}|{<br/>}|
-    |/group/userRole|{<br/> "groupId" : string,<br/> "userId" : string,<br/> "groupRole" : groupRole,/* "user" or "groupAdmin" \*/ <br/>}|{<br/>}|
-    |/group/listUsers|{<br/> "groupId" : string <br/>}|{<br/> "users":Array({<br/> "userId" : string,<br/> "details" : string,<br/> "createdTime" : int ,<br/> faces : Array(faceId)}) <br/>}|
+    |/user/edit|{<br/> "userId" : String,<br/> "details" : String<br/>}|{<br/>}|
+    |/user/get|{<br/> "userId" : String <br/>}|{<br/> "userId" : String,<br/> "roles" : [roles],<br/> "createdDate" : Int, <br/> "details"     : String, <br/>"groups" : [{<br/>"groupId" : String,<br/>"role" : String<br/>}],<br/>"faces" : [faceId]<br/>}|
+    |/user/remove|{<br/> "userId" : String<br/>}|{<br/>}|
+    |/user/removeFace|{<br/> "userId" : String,<br/> "faceId" : String<br/> }|{<br/>}|
+    |/user/fetchFaces|{<br/> "userId" : String <br/>}|{<br/> "faces": [String] <br/>}|
+    |/user/fetchFaceUrls|{<br/> "userId" : String <br/>}|{<br/> "faceUrls": [String] <br/>}|
+    |/group/create|{<br/> "groupname" : String,<br/> "sizeLimit" : number <br/>}|{<br/> "groupId" : String <br/>}|
+    |/group/get|{<br/> "groupId" : String <br/>}|{<br/>"groupname" : String,<br/> "sizeLimit" : String,<br/> "createdDate" : Int <br/>}|
+    |/group/edit|{<br/> "groupId" : String,<br/> "params" : {<br/> "groupname" : String,<br/> "sizeLimit" : Int <br/>} <br/>}|{<br/>}|
+    |/group/remove|{<br/> "groupId" : String <br/>}|{<br/>}|
+    |/group/addUser|{<br/> "groupId" : String,<br/> "userId" : String <br/>}|{<br/>}|
+    |/group/removeUser|{<br/> "groupId" : String,<br/> "userId" : String <br/>}|{<br/>}|
+    |/group/userRole|{<br/> "groupId" : String,<br/> "userId" : String,<br/> "groupRole" : groupRole,/* "user" or "groupAdmin" \*/ <br/>}|{<br/>}|
+    |/group/listUsers|{<br/> "groupId" : String <br/>}|{<br/> "users":[{<br/> "userId" : String,<br/> "details" : String,<br/> "createdTime" : Int ,<br/> faces : [faceId]<br/>}] <br/>}|
     
     <br/>
     - Any of the operations mentioned in the table above can be performed using the following method:
@@ -353,11 +353,11 @@ hvfrcamera.clearCapturedImages()
     - The above operations can also be performed in a way similiar to that mentioned in the last section
     
         ```
-        let requestId = HVOperationManager.makeRequest(images:imagesUri, endpoint:endpoint, request:requestParameters, completionHandler:completionHandler)
+        let requestId = HVOperationManager.makeRequest( endpoint:endpoint, images:imagesUri, request:requestParameters, completionHandler:completionHandler)
         ```
         Here, 
-        - `imagesUri` is an array of Strings, representing the local image path.
         - `endpoint` is a String and has been described in the table above
+        - `imagesUri` is an array of Strings, representing the local image path.
         - `requestParameters` is a Dictionary and is represented by the `Request` column in the table above
         - `completionHandler` is same as the `completionHandler` mentioned in the `makeRequest` method mentioned above
         
