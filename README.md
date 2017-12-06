@@ -317,6 +317,8 @@ hvfrcamera.clearCapturedImages()
     |/user/removeFace|{<br/> "userId" : String,<br/> "faceId" : String<br/> }|{<br/>}|
     |/user/fetchFaces|{<br/> "userId" : String <br/>}|{<br/> "faces": [String] <br/>}|
     |/user/fetchFaceUrls|{<br/> "userId" : String <br/>}|{<br/> "faceUrls": [String] <br/>}|
+    |/user/auth|{<br/> "userId" : String,<br/> "otp" : String, <br/> "permanent" : true/false /\*Default false\*/ <br/>}|{<br/> "token" : string <br/>}|
+    |/user/getOTP|{<br/> "userId" : String <br/>}|{<br/> "otp": String <br/>}|
     |/group/create|{<br/> "groupname" : String,<br/> "sizeLimit" : number <br/>}|{<br/> "groupId" : String <br/>}|
     |/group/get|{<br/> "groupId" : String <br/>}|{<br/>"groupname" : String,<br/> "sizeLimit" : String,<br/> "createdDate" : Int <br/>}|
     |/group/edit|{<br/> "groupId" : String,<br/> "params" : {<br/> "groupname" : String,<br/> "sizeLimit" : Int <br/>} <br/>}|{<br/>}|
