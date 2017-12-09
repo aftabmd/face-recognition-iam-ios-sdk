@@ -69,7 +69,7 @@ The functionality for enrolling, verifying and recognizing a user is implemented
 
 ##### Adding HVFrCamera View to your Application
 - **Adding via Storyboard/xib**:<br/>
-    Add a UIView to the storyboard/xib. Under identity inspector, set the class name to 'HVFRCamera' and module to 'HyperSecureSDK'.  Add an @IBOutlet of this view to your ViewController class. Set layout constraints/frame(using autoLayout/code).
+    Add a UIView to the storyboard/xib. Under identity inspector, set the class name to 'HVFrCamera' and module to 'HyperSecureSDK'.  Add an @IBOutlet of this view to your ViewController class. Set layout constraints/frame(using autoLayout/code).
     <br/>
     Please note: The default camera selected is the front camera. If you want to use the back camera instead, include the following line in `viewDidLoad`(This extra step is not required if the view is created in code).</br>
     
