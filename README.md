@@ -223,15 +223,16 @@ To trigger on-demand capture of image and start Face Recognition/Registration on
 
    Objective C:
    
-    ```
+   ```
     [hvfrcamera capture:onCaptureHandler];
-    ```
+   ```
     
    Swift:
    
-    ```
+   ```
     hvfrcamera.capture(onCaptureHandler)
-    ```
+   ```
+   
 Here, `onCaputureHandler` is a closure of type `(_ error:NSError?, _ isSuccess:Bool) -> Void` in Swift and `^(NSError * _Nullable, BOOL)` in Objective C
 
 If the capture is successful,  `isSuccess` is set to `true` and `error` is set to `nil`. Otherwise, `isSuccess` is `false` and `error` is an `NSError` object with the following information.
@@ -246,15 +247,15 @@ Once the required images have been captured, to start the transaction of Face En
 
    Objective C:
    
-    ```
+   ```
     [hvfrcamera submit];
-    ```
+   ```
     
    Swift:
    
-    ```
+   ```
     hvfrcamera.submit()
-    ```
+   ```
 **Please note:**
 - this method can be called only for registration/face add mode
 - after this method is complete, the completionHandler passed in `startCamera` is called with the results/error of the User Enroll or Face Add operation.
@@ -264,15 +265,15 @@ The following method can be called to clear the images that have been captured v
 
    Objective C:
     
-    ```
+   ```
     [hvfrcamera clearCapturedImages];
-    ```
+   ```
     
    Swift:
     
-    ```
+   ```
     hvfrcamera.clearCapturedImages()
-    ```
+   ```
 **Please note:**
 - This method will clear the reference of the images and delete the images from the disk as well.
 - This method will clear only images that are yet to be submitted (or when a submission has failed).
@@ -399,15 +400,15 @@ The following method can be called to clear the images that have been captured v
     
       Objective C:
        
-        ```
+      ```
         NSInteger requestId = [HVOperationManager makeRequestWithEndPoint:endpoint request:requestParameters           completionHandler:completionHandler]
-        ```
+      ```
         
       Swift:
        
-        ```
+      ```
         let requestId = HVOperationManager.makeRequest(endpoint:endpoint, request:requestParameters, completionHandler:completionHandler)
-        ```
+      ```
     
     The completionHandler is similar to the one from the `startCamera` method. i.e, it is of type `error:NSError?, result:[String:AnyObject]?) -> Void` in Swift and `^(NSError * _Nullable, NSDictionary<NSString *,id> * _Nullable)` in Objective C.
     
@@ -450,15 +451,15 @@ The following method can be called to clear the images that have been captured v
     
     Objective C:
        
-        ```
-         Boolean isCancelled = [HVOperationManager cancelRequest:requestId];
-        ```
+    ```
+      Boolean isCancelled = [HVOperationManager cancelRequest:requestId];
+    ```
         
     Swift:
        
-        ```
-         let isCancelled = HVOperationManager.cancelRequest(requestId)
-        ```
+    ```
+      let isCancelled = HVOperationManager.cancelRequest(requestId)
+    ```
         
     where `requestId` was returned by the corresponding `makeRequest` method that is needed to be cancelled.
 
