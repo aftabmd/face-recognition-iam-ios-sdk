@@ -399,13 +399,11 @@ The following method can be called to clear the images that have been captured v
     - Any of the operations mentioned in the table above can be performed using the following method:
     
       Objective C:
-       
       ```
-        NSInteger requestId = [HVOperationManager makeRequestWithEndPoint:endpoint request:requestParameters           completionHandler:completionHandler]
+        NSInteger requestId = [HVOperationManager makeRequestWithEndPoint:endpoint request:requestParameters completionHandler:completionHandler]
       ```
         
       Swift:
-       
       ```
         let requestId = HVOperationManager.makeRequest(endpoint:endpoint, request:requestParameters, completionHandler:completionHandler)
       ```
