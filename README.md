@@ -37,6 +37,7 @@ A high-level overview of the Face Recognition workflow is as follows:
 #### 2. Setting up an Xcode Project
 - Add the framework to your Xcode project
 - Navigate to Targets -> General and include the framework under 'Embedded Binaries' and 'Linked Frameworks and Libraries'.
+- Navigate to Targets -> 'Your App name' -> Build Settings. Ensure that 'Always Embed Swift Standard Libraries' is set to 'Yes'. 
 - Add this import statement in all files using the framework.<br/>
     Objective C: `@import HyperSecureSDK;`
     Swift: `import HyperSecureSDK`<br/>
@@ -188,12 +189,24 @@ If these captured images need to be cleared, `clearCapturedImages` method(descri
 ##### Pausing or resuming processing
 To pause or resume processing the camera feed for face detection and recognition, the following functions can be used.
 
-- `hvfrcamera.pauseFR()` will pause the Face Detection and auto-capture of faces
-- `hvfrcamera.resumeFR()` will resume the Face Detection and auto-capture of faces(if applicable).
+- `hvfrcamera.pauseFR()` or `[hvfrcamera pauseFR]` will pause the Face Detection and auto-capture of faces
+- `hvfrcamera.resumeFR()` or `[hvfrcamera resumeFR]` will resume the Face Detection and auto-capture of faces(if applicable).
 
 ##### Changing the configuration variables at runtime
 If any of the configuration variables need to be changed at runtime, after `startCamera()` has been called, we can use the setter functions corresponding to the variables after the face processing has been safely paused with `pauseFR()`.
 
+Objective C:
+```
+[hvfrcamera pauseFR]
+[hvfrcamera setUserData:userData]
+[hvfrcamera setMode:mode]
+[hvfrcamera setTimeout:timeout]
+[hvfrcamera setAutoCaptureEnabled:isAutoCaptureEnabled]
+[hvfrcamera setCompletionHandler:completionHandler]
+[hvfrcamera shouldUseFrontCam:useFrontCam]
+[hvfrcamera resumeFR]
+```
+Swift:
 ```
 hvfrcamera.pauseFR()
 hvfrcamera.setUserData(userData)
@@ -208,10 +221,16 @@ hvfrcamera.resumeFR()
 ##### Capturing Face Image Manually
 To trigger on-demand capture of image and start Face Recognition/Registration on the captured frame, following method can be called:
 
-```
-hvfrcamera.capture(onCaptureHandler)
-```
-Here, `onCaputureHandler` is a closure of type `(_ error:NSError?, _ isSuccess:Bool) -> Void`.
+    Objective C:
+    ```
+    [hvfrcamera capture:onCaptureHandler];
+    ```
+    
+    Swift:
+    ```
+    hvfrcamera.capture(onCaptureHandler)
+    ```
+Here, `onCaputureHandler` is a closure of type `(_ error:NSError?, _ isSuccess:Bool) -> Void` in Swift and `^(NSError * _Nullable, BOOL)` in Objective C
 
 If the capture is successful,  `isSuccess` is set to `true` and `error` is set to `nil`. Otherwise, `isSuccess` is `false` and `error` is an `NSError` object with the following information.
 - `code`: Error code stating type of error. (discussed later)
@@ -223,9 +242,15 @@ If the capture is successful,  `isSuccess` is set to `true` and `error` is set t
 ##### Submitting Captured image to Server
 Once the required images have been captured, to start the transaction of Face Enrolling or Adding, following method should be called:
 
-```
-hvfrcamera.submit()
-```
+    Objective C:
+    ```
+    [hvfrcamera submit];
+    ```
+    
+    Swift:
+    ```
+    hvfrcamera.submit()
+    ```
 **Please note:**
 - this method can be called only for registration/face add mode
 - after this method is complete, the completionHandler passed in `startCamera` is called with the results/error of the User Enroll or Face Add operation.
@@ -233,9 +258,15 @@ hvfrcamera.submit()
 ##### Clearing the images captured so far for REGISTRATION and FACE_ADD Mode
 The following method can be called to clear the images that have been captured via `hvfrcamera.capture(onCaptureHandler)` method:
 
-```
-hvfrcamera.clearCapturedImages()
-```
+    Objective C:
+    ```
+    [hvfrcamera clearCapturedImages];
+    ```
+    
+    Swift:
+    ```
+    hvfrcamera.clearCapturedImages()
+    ```
 **Please note:**
 - This method will clear the reference of the images and delete the images from the disk as well.
 - This method will clear only images that are yet to be submitted (or when a submission has failed).
@@ -249,6 +280,11 @@ hvfrcamera.clearCapturedImages()
 ##### Stopping the camera
 - Add the following to the `viewWillDisappear` method of the ViewController (or anywhere apporpriate) to stop the camera and face recognition.
 
+    Objective C:
+    ```
+    [hvfrcamera stopCamera];
+    ```
+    Swift:
     ```
     hvfrcamera.stopCamera()
     ```
@@ -331,11 +367,17 @@ hvfrcamera.clearCapturedImages()
     <br/>
     - Any of the operations mentioned in the table above can be performed using the following method:
     
+        Objective C:
+        ```
+         NSInteger requestId = [HVOperationManager makeRequestWithEndPoint:endpoint request:requestParameters           completionHandler:completionHandler]
+        ```
+        
+        Swift:
         ```
         let requestId = HVOperationManager.makeRequest(endpoint:endpoint, request:requestParameters, completionHandler:completionHandler)
         ```
     
-    The completionHandler is similar to the one from the `startCamera` method. i.e, it is of type `error:NSError?, result:[String:AnyObject]?) -> Void`
+    The completionHandler is similar to the one from the `startCamera` method. i.e, it is of type `error:NSError?, result:[String:AnyObject]?) -> Void` in Swift and `^(NSError * _Nullable, NSDictionary<NSString *,id> * _Nullable)` in Objective C
     The result object has been decribed in the previous table. The error codes are in the next secion.
 
  - **Process captured images**
@@ -354,6 +396,12 @@ hvfrcamera.clearCapturedImages()
     
     - The above operations can also be performed in a way similiar to that mentioned in the last section
     
+        Objective C:
+        ```
+        NSInteger requestId = [HVOperationManager makeRequestWithEndPoint:endpoint images:imagesUri request:requestParameters completionHandler:completionHandler]
+        ```
+        
+        Swift
         ```
         let requestId = HVOperationManager.makeRequest( endpoint:endpoint, images:imagesUri, request:requestParameters, completionHandler:completionHandler)
         ```
@@ -365,9 +413,16 @@ hvfrcamera.clearCapturedImages()
         
     To `cancel` an operation started using HVOperationManager's `makeRequest` method, following method can be used
 
-    ```
-    let isCancelled = HVOperationManager.cancelRequest(requestId)
-    ```
+        Objective C:
+        ```
+         Boolean isCancelled = [HVOperationManager cancelRequest:requestId];
+        ```
+        
+        Swift:
+        ```
+         let isCancelled = HVOperationManager.cancelRequest(requestId)
+        ```
+        
     where `requestId` was returned by the corresponding `makeRequest` method that is needed to be cancelled.
 
     ##### Description of the Error Codes returned from the completionHandler mentioned above has been given below:
