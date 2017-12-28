@@ -416,13 +416,13 @@ The following method can be called to clear the images that have been captured v
 
     To perform an operation that requires one or more locally present images to be uploaded to the server, one of the following operation can be used. These operations can enable the developer to enroll a user using one or more face images, add one or more face images to a user, perform face based authentication using a face image, perform 1:1 recognition or 1:N recognition using an image saved in the device.
     
-    | End Point | Request  | Number of Images | Result |
-    |-----------|----------------|-----|--------|
-    |/user/faceauth|{<br/> "userId" : String<br/>}| 1 |{<br/> "token" : String<br/>}|
-    |/user/enroll|{<br/>"userId" : String,<br/> <br/>"groupId" : String,<br/> <br/> "details" : String<br/>}| 1 to 5 |{<br/> "faceIds" : [String],<faceId><br/> <br/> "faceId" : [String : AnyObject]<br/>}|
-    |/user/addFace|{<br/> "userId" : String<br/>}| 1 to 5 |{<br/> "faceIds" : [String],<faceId><br/> <br/> "faceId" : [String : AnyObject]<br/>}|
-    |/image/verify|{<br/> "userId" : String<br/>}| 1 |{<br/> "faceId" : String,<br/> <br/> "personId" : String,<br/> <br/> "conf" : Integer<br/>}|
-    |/image/recognize|{<br/> "groupId" : String<br/>}| 1 |{<br/> "faceId" : String,<br/> <br/> "personId" : String,<br/> <br/> "userDetails" : [String:AnyObject],<br/> <br/> "details" : String,<br/> <br/> "exists" : Boolean,<br/> <br/> "conf" : Integer<br/>}|
+    | End Point | Request  | imageUriJSON | Result |
+	|-----------|----------------|-----|--------|
+	|/user/faceauth|{<br/> "userId" : String<br/>}| {<br/> "image" : String(local path of image)<br/>} |{<br/> "token" : String<br/>}|
+	|/user/enroll|{<br/>"userId" : String,<br/> <br/>"groupId" : String,<br/> <br/> "details" : String<br/>}| {<br/> "image1" : String(local path of image)<br/>, <br/> "image2" : String(local path of image)<br/>, ...<br/>} |{<br/> "faceIds" : [<br/>{<br/>"label": "image1",<br/>"faceId": String<br/>},<br/>...<br/>],<faceId><br/> "faceId" : String<br/>}|
+	|/user/addFace|{<br/> "userId" : String<br/>}| {<br/> "image1" : String(local path of image)<br/>, <br/> "image2" : String(local path of image)<br/>, ...<br/>} |{<br/> "faceIds" : [<br/>{<br/>"label": "image1",<br/>"faceId": String<br/>},<br/>...<br/>],<faceId><br/> "faceId" : String<br/>}|
+	|/image/verify|{<br/> "userId" : String<br/>}| {<br/> "image" : String(local path of image)<br/>} |{<br/> "faceId" : String,<br/> "personId" : String,<br/> "userDetails" : {<br/> "details" : String,<br/>"userId": String<br/>}, <br/> "exists" : Boolean,<br/> "conf" : Integer<br/>}|
+	|/image/recognize|{<br/> "groupId" : String<br/>}| {<br/> "image" : String(local path of image)<br/>} |{<br/> "faceId" : String,<br/>"personId" : String,<br/> "userDetails" : {<br/> "details" : String,<br/>"userId": String<br/>}, <br/> "exists" : Boolean,<br/> "conf" : Integer<br/>}|
     
     <br/>
     
