@@ -224,6 +224,7 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) NSInteger ERROR_CLEA
 - (void)setAutoCaptureEnabled:(BOOL)isEnable;
 - (BOOL)isAutoCaptureEnabled SWIFT_WARN_UNUSED_RESULT;
 - (void)setTimeout:(NSInteger)timeout;
+- (void)updateCameraOrientation;
 - (void)setFetchFaceUrlsWithShouldFetch:(BOOL)shouldFetch;
 - (void)shouldUseFrontCam:(BOOL)useFrontCam;
 - (void)setCompletionHandler:(void (^ _Nonnull)(NSError * _Nullable, NSDictionary<NSString *, id> * _Nullable))completionHandler;
