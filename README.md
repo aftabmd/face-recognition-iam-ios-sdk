@@ -97,6 +97,22 @@ The functionality for enrolling, verifying and recognizing a user is implemented
     self.view.addSubview(hvfrcamera)
     ```
     Set layout constraints/frame of hvfrcamera.
+    
+**Please note:**
+If the Application supports multiple orientations, add the following to the 'viewWillLayoutSubviews' function of the corresponding ViewController.<br/>
+
+ Objective C:
+
+ ```
+ [hvfrcamera updateCameraOrientation]
+ ```
+
+ Swift:
+
+ ```
+ hvfrcamera.updateCameraOrientation()
+ ```
+  
 
 ##### Starting Face Recognition
  To start the camera and face detection, add the following to the 'viewWillAppear' function of the corresponding ViewController.<br/>
@@ -191,6 +207,23 @@ To pause or resume processing the camera feed for face detection and recognition
 
 - `hvfrcamera.pauseFR()` or `[hvfrcamera pauseFR]` will pause the Face Detection and auto-capture of faces
 - `hvfrcamera.resumeFR()` or `[hvfrcamera resumeFR]` will resume the Face Detection and auto-capture of faces(if applicable).
+
+##### Screen Brightness
+By default, the brightness of the screen is set to 100% in an active session. To turn this feature off, call the following method *before* calling `startCamera`
+
+   Objective C:
+   
+   ```
+    [hvfrcamera enableDisableFullBrightness:false];
+   ```
+    
+   Swift:
+   
+   ```
+     hvfrcamera.enableDisableFullBrightness(shouldEnable: false)
+
+   ```
+
 
 ##### Changing the configuration variables at runtime
 If any of the configuration variables need to be changed at runtime, after `startCamera()` has been called, we can use the setter functions corresponding to the variables after the face processing has been safely paused with `pauseFR()`.
@@ -354,22 +387,23 @@ The following method can be called to clear the images that have been captured v
         Objective C:
     
         ```
-        -(void)willStartProcessingImage:(HVFrCamera*)hvfrcamera {}
+        -(void)willStartProcessing:(HVFrCamera*)hvfrcamera {}
         
-        -(void)didCompleteProcessingImage:(HVFrCamera*)hvfrcamera {}
+        -(void)didEndProcessing:(HVFrCamera*)hvfrcamera {}
 
         ```
         
         Swift:
     
         ```
-        func willStartProcessingImage(_ hvfrcamera: HVFrCamera) {}
+        func willStartProcessing(_ hvfrcamera: HVFrCamera) {}
         
-        func didCompleteProcessingImage(_ hvfrcamera: HVFrCamera) {}
+        func didEndProcessing(_ hvfrcamera: HVFrCamera) {}
         ```
 
     **Please note:**
-    Implementing the delegate is completely optional.
+   - `didEndProcessing` will be called both when the image processing is completed(successfully or otherwise) and when `pauseFr` is somehow reached while processing is in progress.
+   - Implementing the delegate is completely optional.
 
 #### 4. Other operations
  - **Managing Users, Groups and UserData**
@@ -488,5 +522,7 @@ The following method can be called to clear the images that have been captured v
     |618|INPUT_GROUP_ALREADY_EXIST |Occurs when a group already exists with the `groupId` provided|Provide a new unique `groupId` and retry|
     |621|INPUT_OTP_MISMATCH |Occurs when the OTP provided doesnot match the one that is sent to the user|Provide correct `otp` and retry|
     |622|ERROR_INPUT_INVALID_ENDPOINT |Occurs when the `endPoint` provided is not valid|Provide correct the `endPoint` and retry|
-    |699|INPUT_OTHER |Occurs when some other issue is with the input|Read the log message for detailed explanation|
+    |623|INPUT_INVALID_IMAGE_PATH |Occurs when the `imageUri` dictionary is null or there are invalid entries in `imageUri` |Validate the uris in `imageUri` and the image path passed in it and retry|
+    |624|ERROR_INPUT_ILLEGAL_PARAMETER |Occurs when one or more illegal keys are provided in the `request` dictionary|Remove the illegal key value pair from `request` and retry|
+    |699|INPUT_OTHER |Occurs when there is someother issue with the input|Read the log message for a detailed explanation|
 
