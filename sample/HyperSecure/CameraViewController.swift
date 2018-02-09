@@ -95,7 +95,15 @@ class CameraViewController: UIViewController {
             if(self.mode == .CAPTURE){
                 //'makeRequest'call made with the images captured in 'capture' mode.
                 if let result = result{
-                    let taskId = HVOperationManager.makeRequest(endPoint: self.endPoint,images: result["imageUri"] as! [String], request:self.userData ){error,result in
+                    var imageUri = [String:String]()
+                    for image in result["imageUri"] as! [String] {
+                        if(imageUri.count == 0){
+                            imageUri["image"] = image
+                        }else{
+                            imageUri["image\(imageUri.count)"] = image
+                        }
+                    }
+                    let taskId = HVOperationManager.makeRequest(endPoint: self.endPoint,images: imageUri, request:self.userData ){error,result in
                         if(error != nil){
                             self.textView.text = "Error Code : \(error!.code)\n\n Error Description : \(error!.userInfo[NSLocalizedDescriptionKey]!)"
                         }else{
@@ -107,6 +115,9 @@ class CameraViewController: UIViewController {
                 }
             }
         }
+        
+        //Uncomment the next line to disable setting screen brightness to 100%
+//        cameraView.enableDisableFullBrightness(shouldEnable: false)
         cameraView.startCamera(userData: userData, mode: mode, timeout: timeout, autoCaptureEnabled: autoCaptureOn, useFrontCam: useFrontCam,completionHandler: completionHandler)
     }
     
@@ -260,8 +271,7 @@ class CameraViewController: UIViewController {
 }
 
 extension CameraViewController: HVFrCameraDelegate {
-    
-    func willStartProcessingImage(_ hvfrcamera: HVFrCamera) {
+    func willStartProcessing(_ hvfrcamera: HVFrCamera) {
         processingLabel.text = "Processing image.."
         processingAlert.isHidden = false
         processingActivity.startAnimating()
@@ -273,9 +283,11 @@ extension CameraViewController: HVFrCameraDelegate {
         }
     }
     
-    func didCompleteProcessingImage(_ hvfrcamera: HVFrCamera) {
+    func didEndProcessing(_ hvfrcamera: HVFrCamera) {
         processingAlert.isHidden = true
+
     }
+    
     override func didReceiveMemoryWarning() {
         print("Memory warning received!")
     }

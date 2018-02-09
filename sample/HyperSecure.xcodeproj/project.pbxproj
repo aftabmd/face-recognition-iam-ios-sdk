@@ -14,19 +14,19 @@
 		042D9B9B1F921FEF0085ECD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042D9B9A1F921FEF0085ECD2 /* Assets.xcassets */; };
 		042D9B9E1F921FEF0085ECD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042D9B9C1F921FEF0085ECD2 /* LaunchScreen.storyboard */; };
 		0453868F1F99B41D0094978D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453868E1F99B41D0094978D /* Constants.swift */; };
-		0476921B1FF5E7A5006F8E48 /* HyperSecureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0476921A1FF5E7A5006F8E48 /* HyperSecureSDK.framework */; };
-		0476921D1FF5E7E6006F8E48 /* HyperSecureSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0476921A1FF5E7A5006F8E48 /* HyperSecureSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		045F3D13202D9CDB00F967D4 /* HyperSecureSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045F3D12202D9CDB00F967D4 /* HyperSecureSDK.framework */; };
+		045F3D15202D9CE200F967D4 /* HyperSecureSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 045F3D12202D9CDB00F967D4 /* HyperSecureSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		049691A31FAB96580086ED4C /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049691A21FAB96580086ED4C /* UserDataViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		044DD7631FD99756001F685B /* Embed Frameworks */ = {
+		04064B96202D979B003D9C16 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0476921D1FF5E7E6006F8E48 /* HyperSecureSDK.framework in Embed Frameworks */,
+				045F3D15202D9CE200F967D4 /* HyperSecureSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,7 +43,7 @@
 		042D9B9D1F921FEF0085ECD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		042D9B9F1F921FEF0085ECD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0453868E1F99B41D0094978D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0476921A1FF5E7A5006F8E48 /* HyperSecureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSecureSDK.framework; sourceTree = "<group>"; };
+		045F3D12202D9CDB00F967D4 /* HyperSecureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSecureSDK.framework; sourceTree = "<group>"; };
 		049691A21FAB96580086ED4C /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0476921B1FF5E7A5006F8E48 /* HyperSecureSDK.framework in Frameworks */,
+				045F3D13202D9CDB00F967D4 /* HyperSecureSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +62,7 @@
 		042D9B871F921FEF0085ECD2 = {
 			isa = PBXGroup;
 			children = (
+				045F3D12202D9CDB00F967D4 /* HyperSecureSDK.framework */,
 				042D9B921F921FEF0085ECD2 /* HyperSecure */,
 				042D9B911F921FEF0085ECD2 /* Products */,
 				044DD75D1FD99632001F685B /* Frameworks */,
@@ -79,7 +80,6 @@
 		042D9B921F921FEF0085ECD2 /* HyperSecure */ = {
 			isa = PBXGroup;
 			children = (
-				0476921A1FF5E7A5006F8E48 /* HyperSecureSDK.framework */,
 				042D9B931F921FEF0085ECD2 /* AppDelegate.swift */,
 				040408A41F97012000EDA8FA /* InitialViewController.swift */,
 				049691A21FAB96580086ED4C /* UserDataViewController.swift */,
@@ -110,7 +110,7 @@
 				042D9B8C1F921FEF0085ECD2 /* Sources */,
 				042D9B8D1F921FEF0085ECD2 /* Frameworks */,
 				042D9B8E1F921FEF0085ECD2 /* Resources */,
-				044DD7631FD99756001F685B /* Embed Frameworks */,
+				04064B96202D979B003D9C16 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,20 +316,22 @@
 		042D9BB91F921FEF0085ECD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H573M6CV95;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HyperSecure",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HyperSecure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = srinija.HyperSecure;
+				PRODUCT_BUNDLE_IDENTIFIER = co.HyperVerge.HyperSecure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,20 +341,22 @@
 		042D9BBA1F921FEF0085ECD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H573M6CV95;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/HyperSecure",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = HyperSecure/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = srinija.HyperSecure;
+				PRODUCT_BUNDLE_IDENTIFIER = co.HyperVerge.HyperSecure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
