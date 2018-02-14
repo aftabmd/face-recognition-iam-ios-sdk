@@ -1,6 +1,5 @@
 ## Face Recognition Framework Documentation
 
-
 ### Introduction
 HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity and Access Management (IAM) System. This documentation explains how to use the framework to build your own app.
 <br></br>
@@ -8,7 +7,18 @@ HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity 
 ![](https://media.giphy.com/media/P7hZDbHqQAKxG/giphy.gif)
 <br>
 
-#### Overview
+### Table of Contents
+
+  * [Overview](#overview)
+  * [Requirements](#requirements)
+  * [Integration Steps](#integration-steps)
+  * [Usage](#usage)
+  * [HVFrCamera Delegate](#hvfrcameradelegate)
+  * [Other Operations](#other-operations)
+
+
+
+### Overview
 In the context of HyperVerge's face recognition based IAM system, there are 3 entities: User, Group and Organization. Users are the people enrolled for Face Recognition having registered with their face image. A Group can represent a team or site or location or building or any other collection of people. An Organization can thus have multiple Groups and each Group can have multiple Users.
 
 A high-level overview of the Face Recognition workflow is as follows:
@@ -18,7 +28,7 @@ A high-level overview of the Face Recognition workflow is as follows:
 - To verify if a person is actually who they're claiming to be, capture their face from the Camera in Verification Mode along with the userId
 - To add more faces to a person to improve recognition accuracy, capture their face images from the Camera in Face Add Mode
 
-#### Prerequisites
+### Requirements
 - Minimum iOS Deployment Target - iOS 8.0
 - Base SDK - iOS 11.1
 
@@ -33,24 +43,37 @@ A high-level overview of the Face Recognition workflow is as follows:
     - **tenantId**: An id unique to each client of the Channel Partner. It will be used to identify the client organization and will let HyperVerge know which logical organization entity is being referred to for performing operations such as face enrollment, verification or recognition
     - **tenantKey**: A token used to authenticate a client of the Channel Partner. This will help HyperVerge ensure that all the communication to the server is secure and authenticated.
     - **adminToken**: A unique Admin Token for each client organisation's admin user. This token will let HyperVerge authorize the FR operations requested by the SDK at the Server
-
+    
 #### 2. Setting up an Xcode Project
-- Add the framework to your Xcode project
+
+##### Via CocoaPods
+
+HyperSecureSDK is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+```
+pod 'HyperSecureSDK'
+```
+
+##### Manually
+
+- Download 'HyperSecureSDK.framework' and add it to your Xcode project
 - Navigate to Targets -> General and include the framework under 'Embedded Binaries' and 'Linked Frameworks and Libraries'.
 - Navigate to Targets -> 'Your App name' -> Build Settings. Ensure that 'Always Embed Swift Standard Libraries' is set to 'Yes'. 
-- Add this import statement in all files using the framework.<br/>
-    Objective C: `@import HyperSecureSDK;`
-    Swift: `import HyperSecureSDK`<br/>
+
 
 **Permissions**: To request the user for camera permissions, add this key-value pair in your application's info.plist file.<br/>
     Key: Privacy - Camera Usage Description<br/>
-    Value: "Please enable camera access"
+    Value: "This is a face based access control application. In order to capture face, we need camera access."
 
 The same in xml would be:
 ```
 <key>NSCameraUsageDescription</key>
-<string>"Please enable camera access"</string>
+<string>"This is a face based access control application. In order to capture face, we need camera access."</string>
 ```
+
+Add this import statement in all files using the framework.<br/>
+    Objective C: `@import HyperSecureSDK;`
+    Swift: `import HyperSecureSDK`<br/>
 
  **SDK Initialization**: Add the following line to your code for initializing the Library. This must be called before launching the camera. So, preferably in 'viewDidLoad' of the ViewController or 'applicationDidFinishLaunching' in the AppDelegate.</br>
 
@@ -64,11 +87,15 @@ The same in xml would be:
  HyperSecureSDK.initialize(tenantId: <tenantId>, tenantKey: <tenantKey>, adminToken: <adminToken>)
 
  ```
+ 
+ 
+### Usage
 
-#### 3. Enrolling, Verifying or Recognizing User from Camera feed
+#### Enrolling, Verifying or Recognizing User from Camera feed
 The functionality for enrolling, verifying and recognizing a user is implemented in the SDK as a View called `HVFrCamera`. This View includes a camera preview, local face detection and execution of corresponding APIs for enrollment, verification (1:1) and recognition (1:N).
 
 ##### Adding HVFrCamera View to your Application
+
 - **Adding via Storyboard/xib**:<br/>
     Add a UIView to the storyboard/xib. Under identity inspector, set the class name to 'HVFrCamera' and module to 'HyperSecureSDK'.  Add an @IBOutlet of this view to your ViewController class. Set layout constraints/frame(using autoLayout/code).
     <br/>
@@ -132,7 +159,7 @@ If the Application supports multiple orientations, add the following to the 'vie
  The arguments accepted by the start camera function are the Configuration variables for HVFrCamera. The `startCamera()` method will set these variables and set HVFrCamera to start processing the camera feed. The details of the variables are given below.
 
  - `mode` can have a value among FRMode.REGISTER, FRMode.FACE_ADD, FRMode.RECOGNITION, FRMode.VERIFICATION and FRMode.CAPTURE
- - `userData` is the JSONObject having userDetails (explanation below)
+ - `userData` is a dictionary with the userDetails (explanation below)
  - `timeout` is the maximum time in milliseconds since startCamera() or resumeCamera() after which if the registration/recognition is not done, the onError will be called with Timeout Error. A value of 0 will disable the timeout
  - `isAutoCaptureEnabled` is a boolean value that specifies if automatic capture of image should happen for recognition when a face matching the desired size is detected. Please note that auto-capture is not supported for Registration mode or Face Add mode
  - `useFrontCam` is a boolean value that specifies if the front camera should be used. If set to false, then the back camera will be used for processing
@@ -405,7 +432,8 @@ The following method can be called to clear the images that have been captured v
    - `didEndProcessing` will be called both when the image processing is completed(successfully or otherwise) and when `pauseFr` is somehow reached while processing is in progress.
    - Implementing the delegate is completely optional.
 
-#### 4. Other operations
+
+#### Other operations
  - **Managing Users, Groups and UserData**
 
     Management of Users, Groups and UserData requires the ability to perform operations such as creating/deleting a Group, adding/removing a User from a Group, adding/removing a face registered to a User, etc. A complete list of such operations is given in the table below.
@@ -450,7 +478,7 @@ The following method can be called to clear the images that have been captured v
 
     To perform an operation that requires one or more locally present images to be uploaded to the server, one of the following operation can be used. These operations can enable the developer to enroll a user using one or more face images, add one or more face images to a user, perform face based authentication using a face image, perform 1:1 recognition or 1:N recognition using an image saved in the device.
     
-    | End Point | Request  | imageUriJSON | Result |
+    | End Point | Request  | imageUri dictionary | Result |
 	|-----------|----------------|-----|--------|
 	|/user/faceauth|{<br/> "userId" : String<br/>}| {<br/> "image" : String(local path of image)<br/>} |{<br/> "token" : String<br/>}|
 	|/user/enroll|{<br/>"userId" : String,<br/> <br/>"groupId" : String,<br/> <br/> "details" : String<br/>}| {<br/> "image1" : String(local path of image)<br/>, <br/> "image2" : String(local path of image)<br/>, ...<br/>} |{<br/> "faceIds" : [<br/>{<br/>"label": "image1",<br/>"faceId": String<br/>},<br/>...<br/>],<faceId><br/> "faceId" : String<br/>}|
@@ -504,18 +532,18 @@ The following method can be called to clear the images that have been captured v
     |3|Authentication Error|Occurs when the request to server could not be Authenticated/Authorized. Happens when the tenantId, tenantKey and adminToken while initializing SDK are not correct.|Make sure tenantId, tenantKey and adminToken are correct|
     |4|Internal Server Error|Occurs when there is an internal error at the server.|Notify HyperVerge|
     |5|Internal SDK Error|Occurs when an unexpected error has happened with the HyperSecure SDK.|Notify HyperVerge|
-    |603|INPUT_MISSING_USER_ID |Occurs when the request JSON Object is missing `userId`|Provide `userId` in the request JSON Object and retry|
-    |604|INPUT_MISSING_USER_DETAILS |Occurs when the request JSON Object is missing `details`|Provide `details` in the request JSON Object and retry|
-    |605|INPUT_MISSING_GROUPS |Occurs when the request JSON Object is missing `groups`|Provide `groups` in the request JSON Object and retry|
-    |606|INPUT_MISSING_GROUP_ID |Occurs when the request JSON Object is missing `groupId`|Provide `groupId` in the request JSON Object and retry|
-    |607|INPUT_MISSING_GROUP_NAME |Occurs when the request JSON Object is missing `groupName`|Provide `groupName` in the request JSON Object and retry|
-    |608|INPUT_MISSING_GROUP_ROLE |Occurs when the request JSON Object is missing `groupRole`|Provide `groupRole` in the request JSON Object and retry|
-    |609|INPUT_MISSING_GROUP_SIZE_LIMIT |Occurs when the request JSON Object is missing `sizeLimit`|Provide `sizeLimit` in the request JSON Object and retry|
-    |610|INPUT_MISSING_IMAGE |Occurs when the request JSON Object is missing `image`|Provide `image` in the request JSON Object and retry|
-    |611|INPUT_MISSING_ROLE |Occurs when the request JSON Object is missing `role`|Provide `role` in the request JSON Object and retry|
-    |612|INPUT_MISSING_FACE |Occurs when the request JSON Object is missing `face`|Provide `face` in the request JSON Object and retry|
-    |613|INPUT_MISSING_FACE_ID |Occurs when the request JSON Object is missing `faceId`|Provide `faceId` in the request JSON Object and retry|
-    |614|INPUT_MISSING_FACE_IDS |Occurs when the request JSON Object is missing `faceIds`|Provide `faceIds` in the request JSON Object and retry|
+    |603|INPUT_MISSING_USER_ID |Occurs when the request dictionary is missing `userId`|Provide `userId` in the request dictionary and retry|
+    |604|INPUT_MISSING_USER_DETAILS |Occurs when the request dictionary is missing `details`|Provide `details` in the request dictionary and retry|
+    |605|INPUT_MISSING_GROUPS |Occurs when the request dictionary is missing `groups`|Provide `groups` in the request dictionary and retry|
+    |606|INPUT_MISSING_GROUP_ID |Occurs when the request dictionary is missing `groupId`|Provide `groupId` in the request dictionary and retry|
+    |607|INPUT_MISSING_GROUP_NAME |Occurs when the request dictionary is missing `groupName`|Provide `groupName` in the request dictionary and retry|
+    |608|INPUT_MISSING_GROUP_ROLE |Occurs when the request dictionary is missing `groupRole`|Provide `groupRole` in the request dictionary and retry|
+    |609|INPUT_MISSING_GROUP_SIZE_LIMIT |Occurs when the request dictionary is missing `sizeLimit`|Provide `sizeLimit` in the request dictionary and retry|
+    |610|INPUT_MISSING_IMAGE |Occurs when the request dictionary is missing `image`|Provide `image` in the request dictionary and retry|
+    |611|INPUT_MISSING_ROLE |Occurs when the request dictionary is missing `role`|Provide `role` in the request dictionary and retry|
+    |612|INPUT_MISSING_FACE |Occurs when the request dictionary is missing `face`|Provide `face` in the request dictionary and retry|
+    |613|INPUT_MISSING_FACE_ID |Occurs when the request dictionary is missing `faceId`|Provide `faceId` in the request dictionary and retry|
+    |614|INPUT_MISSING_FACE_IDS |Occurs when the request dictionary is missing `faceIds`|Provide `faceIds` in the request dictionary and retry|
     |615|INPUT_USER_NOT_FOUND |Occurs when there is no user associated with the `userId` provided|Provide correct `userId` and retry|
     |616|INPUT_USER_ALREADY_EXIST |Occurs when a user with `userId` provided already exists|Provide a new unique `userId` and retry|
     |617|INPUT_GROUP_NOT_FOUND |Occurs when no group is associated with the `groupId` provided|Provide correct `groupId` and retry|
@@ -525,4 +553,3 @@ The following method can be called to clear the images that have been captured v
     |623|INPUT_INVALID_IMAGE_PATH |Occurs when the `imageUri` dictionary is null or there are invalid entries in `imageUri` |Validate the uris in `imageUri` and the image path passed in it and retry|
     |624|ERROR_INPUT_ILLEGAL_PARAMETER |Occurs when one or more illegal keys are provided in the `request` dictionary|Remove the illegal key value pair from `request` and retry|
     |699|INPUT_OTHER |Occurs when there is someother issue with the input|Read the log message for a detailed explanation|
-
