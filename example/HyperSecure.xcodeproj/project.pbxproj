@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		040408A51F97012000EDA8FA /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040408A41F97012000EDA8FA /* InitialViewController.swift */; };
+		042D9B941F921FEF0085ECD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D9B931F921FEF0085ECD2 /* AppDelegate.swift */; };
+		042D9B961F921FEF0085ECD2 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042D9B951F921FEF0085ECD2 /* CameraViewController.swift */; };
+		042D9B991F921FEF0085ECD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042D9B971F921FEF0085ECD2 /* Main.storyboard */; };
+		042D9B9B1F921FEF0085ECD2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042D9B9A1F921FEF0085ECD2 /* Assets.xcassets */; };
+		042D9B9E1F921FEF0085ECD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 042D9B9C1F921FEF0085ECD2 /* LaunchScreen.storyboard */; };
+		0453868F1F99B41D0094978D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453868E1F99B41D0094978D /* Constants.swift */; };
+		049691A31FAB96580086ED4C /* UserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049691A21FAB96580086ED4C /* UserDataViewController.swift */; };
+		62ED0862329F1D2D13952453 /* Pods_HyperSecure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 785C131DDB85C3FA14A2EFFB /* Pods_HyperSecure.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		040408A41F97012000EDA8FA /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		042D9B901F921FEF0085ECD2 /* HyperSecure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HyperSecure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		042D9B931F921FEF0085ECD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		042D9B951F921FEF0085ECD2 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		042D9B981F921FEF0085ECD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		042D9B9A1F921FEF0085ECD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		042D9B9D1F921FEF0085ECD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		042D9B9F1F921FEF0085ECD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0453868E1F99B41D0094978D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		045F3D12202D9CDB00F967D4 /* HyperSecureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSecureSDK.framework; sourceTree = "<group>"; };
+		049691A21FAB96580086ED4C /* UserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataViewController.swift; sourceTree = "<group>"; };
+		785C131DDB85C3FA14A2EFFB /* Pods_HyperSecure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HyperSecure.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78EBE274B7BF9C6E7AACA4E1 /* Pods-HyperSecure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSecure.release.xcconfig"; path = "Pods/Target Support Files/Pods-HyperSecure/Pods-HyperSecure.release.xcconfig"; sourceTree = "<group>"; };
+		7E513B617DCB816D3DFB67AC /* Pods-HyperSecure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HyperSecure.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HyperSecure/Pods-HyperSecure.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		042D9B8D1F921FEF0085ECD2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62ED0862329F1D2D13952453 /* Pods_HyperSecure.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		042D9B871F921FEF0085ECD2 = {
+			isa = PBXGroup;
+			children = (
+				045F3D12202D9CDB00F967D4 /* HyperSecureSDK.framework */,
+				042D9B921F921FEF0085ECD2 /* HyperSecure */,
+				042D9B911F921FEF0085ECD2 /* Products */,
+				044DD75D1FD99632001F685B /* Frameworks */,
+				061437C138780C7E4D1A76B1 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		042D9B911F921FEF0085ECD2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				042D9B901F921FEF0085ECD2 /* HyperSecure.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		042D9B921F921FEF0085ECD2 /* HyperSecure */ = {
+			isa = PBXGroup;
+			children = (
+				042D9B931F921FEF0085ECD2 /* AppDelegate.swift */,
+				040408A41F97012000EDA8FA /* InitialViewController.swift */,
+				049691A21FAB96580086ED4C /* UserDataViewController.swift */,
+				042D9B951F921FEF0085ECD2 /* CameraViewController.swift */,
+				0453868E1F99B41D0094978D /* Constants.swift */,
+				042D9B971F921FEF0085ECD2 /* Main.storyboard */,
+				042D9B9A1F921FEF0085ECD2 /* Assets.xcassets */,
+				042D9B9C1F921FEF0085ECD2 /* LaunchScreen.storyboard */,
+				042D9B9F1F921FEF0085ECD2 /* Info.plist */,
+			);
+			path = HyperSecure;
+			sourceTree = "<group>";
+		};
+		044DD75D1FD99632001F685B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				785C131DDB85C3FA14A2EFFB /* Pods_HyperSecure.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		061437C138780C7E4D1A76B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E513B617DCB816D3DFB67AC /* Pods-HyperSecure.debug.xcconfig */,
+				78EBE274B7BF9C6E7AACA4E1 /* Pods-HyperSecure.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		042D9B8F1F921FEF0085ECD2 /* HyperSecure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042D9BB81F921FEF0085ECD2 /* Build configuration list for PBXNativeTarget "HyperSecure" */;
+			buildPhases = (
+				3F0240D080CF747BF5C95305 /* [CP] Check Pods Manifest.lock */,
+				042D9B8C1F921FEF0085ECD2 /* Sources */,
+				042D9B8D1F921FEF0085ECD2 /* Frameworks */,
+				042D9B8E1F921FEF0085ECD2 /* Resources */,
+				8A14711EC7C43DB7E47A5373 /* [CP] Embed Pods Frameworks */,
+				952B82BED83BBDD07BAC95AD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HyperSecure;
+			productName = HyperSecure;
+			productReference = 042D9B901F921FEF0085ECD2 /* HyperSecure.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		042D9B881F921FEF0085ECD2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Srinija;
+				TargetAttributes = {
+					042D9B8F1F921FEF0085ECD2 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 042D9B8B1F921FEF0085ECD2 /* Build configuration list for PBXProject "HyperSecure" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 042D9B871F921FEF0085ECD2;
+			productRefGroup = 042D9B911F921FEF0085ECD2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				042D9B8F1F921FEF0085ECD2 /* HyperSecure */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		042D9B8E1F921FEF0085ECD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042D9B9E1F921FEF0085ECD2 /* LaunchScreen.storyboard in Resources */,
+				042D9B9B1F921FEF0085ECD2 /* Assets.xcassets in Resources */,
+				042D9B991F921FEF0085ECD2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F0240D080CF747BF5C95305 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HyperSecure-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A14711EC7C43DB7E47A5373 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-HyperSecure/Pods-HyperSecure-frameworks.sh",
+				"${PODS_ROOT}/HyperSecureSDK/HyperSecureSDK.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HyperSecureSDK.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyperSecure/Pods-HyperSecure-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		952B82BED83BBDD07BAC95AD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HyperSecure/Pods-HyperSecure-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		042D9B8C1F921FEF0085ECD2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0453868F1F99B41D0094978D /* Constants.swift in Sources */,
+				042D9B961F921FEF0085ECD2 /* CameraViewController.swift in Sources */,
+				040408A51F97012000EDA8FA /* InitialViewController.swift in Sources */,
+				049691A31FAB96580086ED4C /* UserDataViewController.swift in Sources */,
+				042D9B941F921FEF0085ECD2 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		042D9B971F921FEF0085ECD2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				042D9B981F921FEF0085ECD2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		042D9B9C1F921FEF0085ECD2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				042D9B9D1F921FEF0085ECD2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		042D9BB61F921FEF0085ECD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		042D9BB71F921FEF0085ECD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		042D9BB91F921FEF0085ECD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E513B617DCB816D3DFB67AC /* Pods-HyperSecure.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H573M6CV95;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HyperSecure",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HyperSecure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.HyperVerge.HyperSecure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		042D9BBA1F921FEF0085ECD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78EBE274B7BF9C6E7AACA4E1 /* Pods-HyperSecure.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H573M6CV95;
+				ENABLE_BITCODE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HyperSecure",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = HyperSecure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = co.HyperVerge.HyperSecure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		042D9B8B1F921FEF0085ECD2 /* Build configuration list for PBXProject "HyperSecure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042D9BB61F921FEF0085ECD2 /* Debug */,
+				042D9BB71F921FEF0085ECD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		042D9BB81F921FEF0085ECD2 /* Build configuration list for PBXNativeTarget "HyperSecure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042D9BB91F921FEF0085ECD2 /* Debug */,
+				042D9BBA1F921FEF0085ECD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 042D9B881F921FEF0085ECD2 /* Project object */;
+}

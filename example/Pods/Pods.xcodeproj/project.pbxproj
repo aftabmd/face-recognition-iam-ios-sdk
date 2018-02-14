@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07F55446737AEA0145218692D0172468 /* Pods-HyperSecure-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3093B8AE266859638D82DED51459C8FE /* Pods-HyperSecure-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8B7E8EEC53E70DAC901BFF30DAE6F0BA /* Pods-HyperSecure-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D66BD2D774E8E7C8D45A0FD4239D1EFD /* Pods-HyperSecure-dummy.m */; };
+		F0D5DFE94E6CBA01CDFCA3F1D726CEBE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3093B8AE266859638D82DED51459C8FE /* Pods-HyperSecure-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-HyperSecure-umbrella.h"; sourceTree = "<group>"; };
+		4F0001C3885C73F4E7C59A2552F6641E /* Pods-HyperSecure.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HyperSecure.release.xcconfig"; sourceTree = "<group>"; };
+		5D161DBE4B45D6106E07067F9484DF03 /* HyperSecureSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HyperSecureSDK.framework; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98A2330F4011102096E95819858D9405 /* Pods-HyperSecure-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HyperSecure-frameworks.sh"; sourceTree = "<group>"; };
+		9ADEED03E25144498CF31898991F052D /* Pods_HyperSecure.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_HyperSecure.framework; path = "Pods-HyperSecure.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A152B05864FF0BB7FE4ADAD9A2A57A18 /* Pods-HyperSecure-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-HyperSecure-resources.sh"; sourceTree = "<group>"; };
+		A4B52FACFAC6F0630B7697BC95CD968F /* Pods-HyperSecure.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-HyperSecure.debug.xcconfig"; sourceTree = "<group>"; };
+		B27E7EF6E8BAE77BF820726554CD77F1 /* Pods-HyperSecure-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-HyperSecure-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D66BD2D774E8E7C8D45A0FD4239D1EFD /* Pods-HyperSecure-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-HyperSecure-dummy.m"; sourceTree = "<group>"; };
+		DD8408520231972C10AB6F9C555A6595 /* Pods-HyperSecure-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-HyperSecure-acknowledgements.plist"; sourceTree = "<group>"; };
+		E6D3AA5E995740E7ED98982C4343A41E /* Pods-HyperSecure.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-HyperSecure.modulemap"; sourceTree = "<group>"; };
+		F60DC8217E70185CC38086A0C5641F9E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E25B54200B311D523532FE48916AF01C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D5DFE94E6CBA01CDFCA3F1D726CEBE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2DAE8D0DC29004C160BAFF9CABAF36CB /* HyperSecureSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D418383AFDC01F08FAA69A658244B7D5 /* Frameworks */,
+			);
+			name = HyperSecureSDK;
+			path = HyperSecureSDK;
+			sourceTree = "<group>";
+		};
+		30AF2CC315676D0E5BA03AD14B15B901 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9ADEED03E25144498CF31898991F052D /* Pods_HyperSecure.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4DC194BDE850ADEF48AEFB29BE6C967E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DAE8D0DC29004C160BAFF9CABAF36CB /* HyperSecureSDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		68881D9C84ADC16112C96434570FC332 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C1255A996A1CAF4EC4EA0C88DE4C2CCF /* Pods-HyperSecure */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				4DC194BDE850ADEF48AEFB29BE6C967E /* Pods */,
+				30AF2CC315676D0E5BA03AD14B15B901 /* Products */,
+				68881D9C84ADC16112C96434570FC332 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C1255A996A1CAF4EC4EA0C88DE4C2CCF /* Pods-HyperSecure */ = {
+			isa = PBXGroup;
+			children = (
+				F60DC8217E70185CC38086A0C5641F9E /* Info.plist */,
+				E6D3AA5E995740E7ED98982C4343A41E /* Pods-HyperSecure.modulemap */,
+				B27E7EF6E8BAE77BF820726554CD77F1 /* Pods-HyperSecure-acknowledgements.markdown */,
+				DD8408520231972C10AB6F9C555A6595 /* Pods-HyperSecure-acknowledgements.plist */,
+				D66BD2D774E8E7C8D45A0FD4239D1EFD /* Pods-HyperSecure-dummy.m */,
+				98A2330F4011102096E95819858D9405 /* Pods-HyperSecure-frameworks.sh */,
+				A152B05864FF0BB7FE4ADAD9A2A57A18 /* Pods-HyperSecure-resources.sh */,
+				3093B8AE266859638D82DED51459C8FE /* Pods-HyperSecure-umbrella.h */,
+				A4B52FACFAC6F0630B7697BC95CD968F /* Pods-HyperSecure.debug.xcconfig */,
+				4F0001C3885C73F4E7C59A2552F6641E /* Pods-HyperSecure.release.xcconfig */,
+			);
+			name = "Pods-HyperSecure";
+			path = "Target Support Files/Pods-HyperSecure";
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		D418383AFDC01F08FAA69A658244B7D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D161DBE4B45D6106E07067F9484DF03 /* HyperSecureSDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BD996934CEC8DCB5979EB5EE5BCCE14F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07F55446737AEA0145218692D0172468 /* Pods-HyperSecure-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		629077B967CD758B3F38A51F1FC30548 /* Pods-HyperSecure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8067C45E4248EE564F3F0DE92C715D5C /* Build configuration list for PBXNativeTarget "Pods-HyperSecure" */;
+			buildPhases = (
+				B097032C2562B8C01D705CBD33BB4DA4 /* Sources */,
+				E25B54200B311D523532FE48916AF01C /* Frameworks */,
+				BD996934CEC8DCB5979EB5EE5BCCE14F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-HyperSecure";
+			productName = "Pods-HyperSecure";
+			productReference = 9ADEED03E25144498CF31898991F052D /* Pods_HyperSecure.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 30AF2CC315676D0E5BA03AD14B15B901 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				629077B967CD758B3F38A51F1FC30548 /* Pods-HyperSecure */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B097032C2562B8C01D705CBD33BB4DA4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8B7E8EEC53E70DAC901BFF30DAE6F0BA /* Pods-HyperSecure-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		27A0C435957B29C569962C29F9944C1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F0001C3885C73F4E7C59A2552F6641E /* Pods-HyperSecure.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-HyperSecure/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HyperSecure/Pods-HyperSecure.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HyperSecure;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63A59AA34A375EFC0A5455B603C2E95E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4B52FACFAC6F0630B7697BC95CD968F /* Pods-HyperSecure.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-HyperSecure/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-HyperSecure/Pods-HyperSecure.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_HyperSecure;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1C7D17A37D091C98D2F0DD886C3A9320 /* Debug */,
+				34FE9531DA9AF2820790339988D5FF41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8067C45E4248EE564F3F0DE92C715D5C /* Build configuration list for PBXNativeTarget "Pods-HyperSecure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63A59AA34A375EFC0A5455B603C2E95E /* Debug */,
+				27A0C435957B29C569962C29F9944C1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

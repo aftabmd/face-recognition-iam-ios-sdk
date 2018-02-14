@@ -1,0 +1,4 @@
+framework module HyperSecureSDK {
+    header "HyperSecureSDK-Swift.h"
+    requires objc
+}
