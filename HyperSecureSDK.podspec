@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = "8.0"
   s.source       = { :http => "https://github.com/hyperverge/face-recognition-iam-ios-sdk/blob/master/HyperSecureSDK.zip?raw=true" }
-  s.ios.vendored_frameworks = "HyperSecureSDK.framework"
+  s.ios.vendored_frameworks = "HyperSecureSDK/HyperSecureSDK.framework"
 
 end
