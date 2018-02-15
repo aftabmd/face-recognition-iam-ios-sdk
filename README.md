@@ -11,6 +11,7 @@ HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity 
 
   * [Overview](#overview)
   * [Requirements](#requirements)
+  * [Example Project](#example-project)
   * [Integration Steps](#integration-steps)
   * [Usage](#usage)
   * [HVFrCamera Delegate](#hvfrcameradelegate)
@@ -28,17 +29,23 @@ A high-level overview of the Face Recognition workflow is as follows:
 - To verify if a person is actually who they're claiming to be, capture their face from the Camera in Verification Mode along with the userId
 - To add more faces to a person to improve recognition accuracy, capture their face images from the Camera in Face Add Mode
 
+
 ### Requirements
 - Minimum iOS Deployment Target - iOS 8.0
-- Base SDK - iOS 11.1
 
----
+
+### Example Project
+- Please refer to the example app provided in the repo to get an understanding of the implementation process.
+- To run the app, clone/download the repo and open example/HyperSecure.xcworkspace.
+- Set the tenantID, tenantKey, admin token and groupID in `Constants.swift`. These values are discussed in the next section.
+- Build and run the app.
+
 
 ### Integration Steps
 
 #### 1. Getting SDK credentials
 
-- **Using HyperSecure within your own organization**: Please use the `tenantId`, `tenantKey` and `adminToken` supplied by HyperVerge. If you don't have them already, then drop a mail to contact@hyperverge.co
+- **Using HyperSecure within your own organization**: Please use the `tenantId`, `tenantKey` and `adminToken` supplied by HyperVerge. If you don't have them already, drop a mail to contact@hyperverge.co
 - **Using HyperSecure for other organizations**: Channel Partners using HyperSecure as part of solutions for other organizations shall use a dashboard or an API provided by HyperVerge to create a client organization. Upon creation, they will receive a `tenantId`, `tenantKey` and `adminToken` unique to each client organization, which shall be used in the SDK initialization as described later.
     - **tenantId**: An id unique to each client of the Channel Partner. It will be used to identify the client organization and will let HyperVerge know which logical organization entity is being referred to for performing operations such as face enrollment, verification or recognition
     - **tenantKey**: A token used to authenticate a client of the Channel Partner. This will help HyperVerge ensure that all the communication to the server is secure and authenticated.
