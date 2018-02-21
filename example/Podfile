@@ -7,6 +7,6 @@ target 'HyperSecure' do
 
   # Pods for HyperSecure
 	
-	pod 'HyperSecureSDK', :podspec => '../'
+	pod 'HyperSecureSDK’
 
 end

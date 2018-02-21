@@ -1,16 +1,12 @@
 PODS:
-  - HyperSecureSDK (1.1.0)
+  - HyperSecureSDK (1.1.1)
 
 DEPENDENCIES:
-  - HyperSecureSDK (from `../`)
-
-EXTERNAL SOURCES:
-  HyperSecureSDK:
-    :podspec: ../
+  - HyperSecureSDK
 
 SPEC CHECKSUMS:
-  HyperSecureSDK: bed02245ed63e7413852b36acff111c758cfc187
+  HyperSecureSDK: 39de2538b6c0e4544a37612311783f26e1ba84b7
 
-PODFILE CHECKSUM: 476f12b00e0ed08aa0e489bfcd4e80bf5d348766
+PODFILE CHECKSUM: 529bde8b843d3877135834aa6f97a8159525b038
 
 COCOAPODS: 1.3.1
