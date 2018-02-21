@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "HyperSecureSDK"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity and Access Management (IAM) System."
   # s.description  = "HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity and Access Management (IAM) System."
   s.homepage     = "http://hyperverge.co/"
