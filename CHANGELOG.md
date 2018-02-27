@@ -12,3 +12,9 @@
 - When onPause is reached after processing has begun, ‘didEndProcessing’ will be called.
 - Default brightness of the camera screen will now be 100%. A method to turn this feature off has been provided.
 - Error codes 623 and 624 added.
+
+
+#### Version 1.1.1
+
+##### Bugs fixed:
+- Issue with network calls getting cancelled when multiple generic requests are made.
