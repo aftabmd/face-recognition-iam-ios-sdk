@@ -18,3 +18,9 @@
 
 ##### Bugs fixed:
 - Issue with network calls getting cancelled when multiple generic requests are made.
+
+#### Version 1.1.2
+
+##### Bugs fixed:
+- Missing bitcode.
+- Compatibility issue with Xcode 9.3. 
