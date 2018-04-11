@@ -1,6 +1,6 @@
 {
   "name": "HyperSecureSDK",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "summary": "HyperSecure is an iOS Framework of HyperVerge's Face Recognition based Identity and Access Management (IAM) System.",
   "homepage": "http://hyperverge.co/",
   "authors": "HyperVerge",
@@ -8,7 +8,7 @@
     "ios": "8.0"
   },
   "source": {
-    "http": "https://github.com/hyperverge/HyperSecureSDK/blob/master/HyperSecureSDK.zip?raw=true"
+    "http": "https://github.com/hyperverge/face-recognition-iam-ios-sdk/blob/master/HyperSecureSDK.zip?raw=true"
   },
   "ios": {
     "vendored_frameworks": "HyperSecureSDK.framework"

@@ -195,7 +195,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-HyperSecure/Pods-HyperSecure-frameworks.sh",
-				"${PODS_ROOT}/HyperSecureSDK/HyperSecureSDK.framework",
+				"${PODS_ROOT}/../../HyperSecureSDK.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (

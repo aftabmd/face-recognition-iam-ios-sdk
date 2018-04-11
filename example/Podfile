@@ -6,7 +6,8 @@ target 'HyperSecure' do
   use_frameworks!
 
   # Pods for HyperSecure
-	
-	pod 'HyperSecureSDK’
+  
+    pod 'HyperSecureSDK', :path => '../'
+
 
 end
